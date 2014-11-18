@@ -1,0 +1,20 @@
+h1 Home
+div(style="padding:20px;")
+	p(ng-bind="shittu")
+	p {{kenny}}
+	md-toolbar
+		h2 Add Stuff
+
+	main(flex)
+		div(class="row")
+			md-text-float(ng-model="stuff.name" label="Stuff Name")
+			md-text-float(ng-model="stuff.type" label="Stuff Type")
+			md-text-float(ng-model="stuff.color" label="Stuff Color" type="color")
+			md-checkbox(ng-model="stuff.public") Public Stuff
+
+			p
+				span {{stuff.name}}
+			md-button(ng-click="createStuff()") Send
+
+			p
+				{{stuffs}}	

@@ -1,0 +1,251 @@
+/* Color constants */
+@lighttext: #bbb;
+@defaultblue: #006ee9;
+@darkreddish: #871a00;
+@altblue: #0073e6;
+@ghost: #c4c5c8;
+@geyser: #ccced1;
+@onahau: #c3e0f8;
+@delta: #999694;
+@citrus: #a5a300;
+
+@cloud: rgba(255, 255, 255, 0.5);
+
+/* Other constants */
+@lightpadding: 10px;
+@smalltext-size: 8pt;
+@ptext: Palatino, Times;
+
+html {
+  
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans;
+  font-size: 12pt;
+  color: #333;
+}
+
+p {
+  &.smallprint {
+    font-size: 10pt;
+  }
+}
+
+menu-icon {
+  flex: 0 0 50px;
+  font-size: 32px;
+  padding: 10px;
+  color: #C6DF87;
+  margin-left: -15px;
+  margin-top: -15px;
+  position: fixed;
+  text-shadow: 1px 1px 1px rgba(0,0,0, 0.5);
+  z-index: 1;
+}
+
+h1, h2, h3 { font-family: 'Helvetica Neue', Helvetica, Arial }
+
+material-sidenav {
+  background-color: #EEFBFE;
+  material-toolbar { background-color: #C6DF87 }
+  h1 {
+    margin: 10px
+  }
+  min-width: 225px;
+  max-width: 225px;
+}
+
+.dropdown {
+  font-size: 14pt;
+}
+
+.menu-item {
+  border-width: 0;
+  cursor: pointer;
+  display: block;
+  color: #333;
+  font-family: 'Helvetica';
+  font-size: inherit;
+  line-height: 40px;
+  max-height: 40px;
+  margin: 0;
+  outline: 0;
+  padding: 0 28px;
+  position: relative;
+  text-align: left !important;
+  text-decoration: none;
+  width: 100%;
+
+  button {
+    text-align: left !important;
+  }
+
+  &.menu-title {
+    color: #888;
+    font-size: 16px;
+    padding-left: 16px;
+    text-align: left;
+    text-transform: uppercase;
+  }
+}
+
+container {
+  display: block;
+  width: 100%;
+}
+
+material-content {
+  header {
+    display: block !important;
+    padding-right: 20px;
+    text-align: right;
+  }
+  .container-fluid {
+    margin-top: 10px;
+  }
+
+  &.main { flex: 10 10 auto }
+  &.footer {
+    flex: 0 0 50px;
+    p {
+      position: absolute;
+      bottom: -30px;
+      left: 0;
+      transform: rotate(-90deg);
+      -webkit-transform-origin: 0 0;
+      -moz-transform-origin:    0 0;
+      -ms-transform-origin:     0 0;
+      -o-transform-origin:      0 0;
+    }
+  }
+}
+
+a, a:hover, a:active {
+  color: @darkreddish;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+
+img.avatar {
+  border-radius: 50%;
+  width: 55px;
+  height: auto;
+}
+
+.jumbotron {
+  background-color: @cloud;
+  .h1 {
+    font-size: 36pt !important;
+    font-weight: bold;
+  }
+  p.subtext {
+    font-size: 24pt;
+  }
+}
+
+.backdrop {
+  background-color: @cloud;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+.content {
+  position: relative;
+}
+
+.entry {
+  background-color: white;
+  font-family: Palatino, Times;
+  margin-bottom: 10px;
+  padding: 20px;
+  h2 {
+    color: #A41100;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  h3 {
+    color: #999999;
+    margin: 0 !important;
+  }
+  hr {
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+  .heading {
+    h2 {
+      flex: 10 10 auto;
+    }
+    .entry-actions {
+      flex: 1 1 auto;
+      font-size: 20px;
+      text-align: right;
+      a { color: #ddd; outline: none !important }
+      a:hover { color: #333 }
+    }
+  }
+
+  .text p {
+    color: #333;
+    font-size: 17px;
+    line-height: 1.4em;
+    padding-top: 5px;
+  }
+  p[btf-markdown] {
+    h1, h2, h3, h4 {
+      color: #333 !important;
+      font-family: @ptext !important;
+      margin-top: 7px !important;
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+form.new-entry {
+  textarea {
+    background-color: white;
+    border: 0;
+    font-family: Palatino, Times;
+    font-size: 16pt;
+    height: 300px;
+    padding: @lightpadding;
+    width: 100%;
+  }
+}
+
+.email {
+  background: white;
+  border: 1px solid silver;
+
+  p {
+    font-family: 'Andale Mono', fixed !important;
+    font-size: 12pt !important;
+  }
+  padding: 10px;
+}
+
+section {
+  h2 {
+    margin-bottom: 6pt;
+  }
+  padding-left: 5px;
+  padding-bottom: 20px;
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : portrait) {
+  form.new-entry {
+    textarea {
+      font-family: Palatino, Times;
+      font-size: 12pt;
+      height: 320px;
+    }
+  }
+
+  material-content.footer {
+    flex: 0 0 95px;
+    max-height: 95px;
+  }
+}

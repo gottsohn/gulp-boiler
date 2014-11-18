@@ -1,0 +1,7 @@
+header
+  p
+    a(ng-hide="currentUser" ng-click="login('google')") login
+  div(ng-show="currentUser")
+    p
+      | {{ currentUser.email }}&nbsp;
+      a(ng-click="logout()") sign out

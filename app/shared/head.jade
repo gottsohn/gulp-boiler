@@ -1,0 +1,34 @@
+meta(name='HandheldFriendly' content='True')
+meta(name='MobileOptimized' content='320')
+meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
+
+base(href="/")
+
+// CDN provided
+link(rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css")
+
+//build:css /dist/style.css
+link(rel="stylesheet" href="/lib/angular-material/angular-material.css" type="text/css")
+link(rel="stylesheet" href="/css/application.css" type="text/css")
+// endbuild
+
+// build:js /dist/lib.js
+script(type="text/javascript" src="/lib/lodash/dist/lodash.js")
+script(type="text/javascript" src="/lib/moment/moment.js")
+script(type="text/javascript" src="/lib/angular/angular.js")
+script(type="text/javascript" src="/lib/angular-animate/angular-animate.js")
+script(type="text/javascript" src="/lib/angular-aria/angular-aria.js")
+script(type="text/javascript" src="/lib/angular-ui-router/release/angular-ui-router.min.js")
+script(type="text/javascript" src="/lib/angular-cookies/angular-cookies.js")
+script(type="text/javascript" src="/lib/hammerjs/hammer.js")
+script(type="text/javascript" src="/lib/angular-material/angular-material.js")
+script(type="text/javascript" src="/lib/firebase/firebase.js")
+script(type="text/javascript" src="/lib/angularfire/dist/angularfire.js")
+// endbuild
+
+script
+  | window.analytics=window.analytics||[],window.analytics.methods=["identify","group","track","page","pageview","alias","ready","on","once","off","trackLink","trackForm","trackClick","trackSubmit"],window.analytics.factory=function(t){return function(){var a=Array.prototype.slice.call(arguments);return a.unshift(t),window.analytics.push(a),window.analytics}};for(var i=0;i<window.analytics.methods.length;i++){var key=window.analytics.methods[i];window.analytics[key]=window.analytics.factory(key)}window.analytics.load=function(t){if(!document.getElementById("analytics-js")){var a=document.createElement("script");a.type="text/javascript",a.id="analytics-js",a.async=!0,a.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.io/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n)}},window.analytics.SNIPPET_VERSION="2.0.9",
+  | window.analytics.load("dG46Drrd6i");
+  | window.analytics.page();
+
+script(type="text/javascript" src="/js/index.js")

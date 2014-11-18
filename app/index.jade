@@ -1,0 +1,14 @@
+doctype html
+html(lang="en" ng-app="Matsi")
+  head
+    title Matsi
+    include shared/head
+  body(layout="horizontal")
+    container(layout="vertical")
+      material-content.header
+        include shared/header
+      material-content.main
+        section(ui-view)
+
+      material-content.footer
+        include shared/footer
