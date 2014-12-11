@@ -1,5 +1,5 @@
 {
-  "name": "skilltree",
+  "name": "myapp",
   "dependencies": {
     "angular": "latest",
     "angular-animate": "latest",

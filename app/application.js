@@ -1,30 +1,28 @@
-require("./js/controllers.js");
-require("./js/directives.js");
-require("./js/services.js");
+require("./js/config.js");
 
-window.Matsi = angular.module("Matsi", [
-  'matsi.controllers',
-  'matsi.services',
-  'matsi.directives',
+window.MyApp = angular.module("MyApp", [
+  'myapp.controllers',
+  'myapp.services',
+  'myapp.directives',
   'ngAnimate', 
   'ngMaterial',
   'ui.router'
    ]);
 
-Matsi.run(['$rootScope', function($rootScope) {
+MyApp.run(['$rootScope', function($rootScope) {
   // set globals we want available in ng expressions
   $rootScope._ = window._;
   $rootScope.moment = window.moment;
 }]);
 
-Matsi.config(['$stateProvider', '$urlRouterProvider','$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
+MyApp.config(['$stateProvider', '$urlRouterProvider','$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $locationProvider.html5Mode(true);
   $stateProvider
     .state('home', {
       url: '/',
       templateUrl: 'pages/home.html',
-      controller: 'HomeController',
+      controller: 'Home',
       data: {
         access: 'public'
       }
@@ -32,7 +30,7 @@ Matsi.config(['$stateProvider', '$urlRouterProvider','$locationProvider', functi
      .state('settings', {
       url: '/settings',
       templateUrl: 'pages/settings.html',
-      controller: 'SettingsController',
+      controller: 'Settings',
       data: {
         access: 'private'
       }
@@ -44,7 +42,6 @@ window.escapeEmailAddress = function(email) {
   if (!email) {
     return false;
   }
-
   // Replace '.' (not allowed in a Firebase key) with ',' (not allowed in an email address)
   email = email.toLowerCase();
   email = email.replace(/\./g, ',');

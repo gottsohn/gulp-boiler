@@ -1,4 +1,4 @@
-angular.module("matsi.directives", ['firebase','ngCookies'])
+angular.module("myapp.directives")
   .directive('header', function() {
     return {
       restrict: 'E',
