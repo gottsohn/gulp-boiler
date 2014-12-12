@@ -132,6 +132,7 @@ gulp.task('watch', function() {
   // livereload.listen({ port: 35729 });
   gulp.watch(paths.jade, ['jade']);
   gulp.watch(paths.styles, ['less']);
+  gulp.watch(paths.scripts, ['browserify']);
   // gulp.watch(paths.public).on('change', livereload.changed);
 });
 
@@ -178,5 +179,5 @@ gulp.task('usemin', function() {
 gulp.task('build', ['jade','less','static-files','browserify','bower']);
 gulp.task('heroku:production', ['build']);
 gulp.task('production', ['nodemon','build']);
-gulp.task('default', ['nodemon','jade','less','watch','build']);
+gulp.task('default', ['nodemon','watch','build']);
 gulp.task('test', ['test:ui','test:lib']);

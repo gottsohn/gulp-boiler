@@ -1,4 +1,6 @@
 module.exports = {
-    dev: 'https://brilliant-heat-9512.firebaseio.com/',
-    prod: 'https://brilliant-heat-9512.firebaseio.com/'
+  dev: 'https://blistering-inferno-2858.firebaseio.com/',
+  prod: 'https://blistering-inferno-2858.firebaseio.com/'
 };
+
+//specify the firebase urls for each environment

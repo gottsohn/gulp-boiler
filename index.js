@@ -30,6 +30,7 @@ function run(appdir) {
 	// static files
 	app.use(express.static(app.dir + '/public'));
 
+	//handle all routes with frontend angular ui route
 	app.get('/*',function(req,res){
 		res.sendFile('index.html',{root:'./public/'});
 	});

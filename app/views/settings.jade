@@ -1,0 +1,25 @@
+div
+  md-toolbar
+    .md-toolbar-tools
+      span.md-flex(ng-bind="authUser.name") 
+  md-content.md-padding
+    
+    p
+      md-text-float(label="google-uid" ng-model="authUser.uid" disabled)
+    p
+      md-text-float(label="Email" ng-model="authUser.email")
+    p    
+      img(height="100" ng-src="{{authUser.picture}}")
+    div(layout="row")
+      div(flex)
+        md-text-float(label="First Name" ng-model="authUser.firstName")
+      div(flex)
+        md-text-float(label="Email" ng-model="authUser.email")
+      div(flex)
+        md-text-float(label="Last Name" ng-model="authUser.lastName")
+    p
+      md-text-float(label="Email" ng-model="authUser.email")
+
+  md-content.md-padding
+      md-button(ng-click="update()") Update
+      md-button(ng-click="logout()" ng-if="authUser") Logout
