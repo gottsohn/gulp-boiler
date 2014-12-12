@@ -34,7 +34,7 @@ MyApp.run(['$rootScope','Refs','$timeout','Authentication', 'Authorization', fun
       });
 
       // indicate to the rest of the app that we're logged in
-      //$rootScope.authUser = user;
+      $rootScope.authUser = user;
 
       // analytics.identify(user.uid, {
       //   name: user.name,
