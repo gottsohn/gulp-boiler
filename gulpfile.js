@@ -26,8 +26,8 @@ var paths = {
   jade: 'app/**/*.jade',
   scripts: 'app/**/*.js',
   staticFiles: [
-    'app/**',
-    '!app/**/*.+(less|css|js|jade)'
+    '!app/**/*.+(less|css|js|jade)',
+     'app/**/*.*'
   ],
   unitTests: [
     'public/lib/angular/angular.js',
