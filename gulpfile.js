@@ -19,6 +19,7 @@ var browserify = require('browserify'),
     uglify = require('gulp-uglify'),
     watchify = require('watchify'),
     mocha = require('gulp-mocha'),
+    protractor = require('gulp-protractor').protractor,
     exit = require('gulp-exit');
 
 var paths = {
@@ -32,10 +33,8 @@ var paths = {
   unitTests: [
     'public/lib/angular/angular.js',
     'public/lib/angular-mocks/angular-mocks.js',
-    'public/lib/angular-route/angular-route.js',
     'public/lib/angular-ui-router/release/angular-ui-router.js',
     'public/lib/angular-cookies/angular-cookies.js',
-    'public/lib/angular-bootstrap/ui-bootstrap.js',
     'public/lib/hammerjs/hammer.js',
     'public/lib/angular-aria/angular-aria.js',
     'public/lib/angular-material/angular-material.js',
@@ -44,10 +43,11 @@ var paths = {
     'public/lib/angularfire/dist/angularfire.js',
     'public/lib/moment/moment.js',
     'public/lib/firebase/firebase.js',
-    'public/js/index.js',
     'public/lib/lodash/dist/lodash.min.js',
-    'app/test/**/*.js'],
-  libTests:['lib/test/**/*.js'],
+    'public/js/index.js',
+    'app/tests/**/*.js'
+    ],
+  libTests:['lib/tests/**/*.js'],
   styles: 'app/styles/*.+(less|css)'
 }
 
@@ -83,11 +83,11 @@ gulp.task('nodemon', function () {
     })
 });
 
-gulp.task('test:ui',['browserify'], function() {
+gulp.task('test:ui', function() {
   // Be sure to return the stream
   return gulp.src(paths.unitTests)
     .pipe(karma({
-      configFile: 'karma.conf2.js',
+      configFile: 'karma.conf.js',
       action: 'run'
     }))
     .on('error', function(err) {
@@ -110,7 +110,7 @@ gulp.task('test:one', function() {
 
   return gulp.src(testPaths)
   .pipe(karma({
-    configFile: 'karma.conf.js',
+    configFile: 'test/karma.conf.js',
     action: 'run'
   }))
   .on('error', function(err) {
@@ -153,7 +153,21 @@ gulp.task('watchify', function() {
 
 gulp.task('bower', function() {
   return bower()
-    .pipe(gulp.dest('public/lib/'))
+    .pipe(gulp.dest('public/lib/'));
+});
+
+gulp.task('protractor',function(cb){
+
+  //app.listen(8000);
+  gulp.src(["./lib/protractor/tests/**/*.js"])
+  .pipe(protractor({
+      configFile: "test/protractor.conf.js",
+      args: ['--baseUrl', 'http://127.0.0.1:8000']
+  }))    
+  .on('error', function(e) {
+        console.log(e)
+  })
+  .on('end', cb);    
 });
 
 gulp.task('browserify', function() {

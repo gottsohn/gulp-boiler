@@ -19,13 +19,18 @@
   "license": "Proprietary",
   "homepage": "http://andela.co",
   "devDependencies": {
+    "chromedriver": "^2.12.0",
     "gulp-karma": "0.0.4",
+    "gulp-protractor": "0.0.12",
     "karma": "^0.12.0",
     "karma-chrome-launcher": "^0.1.4",
+    "karma-coverage": "^0.2.7",
     "karma-jasmine": "^0.2.0",
     "karma-mocha": "^0.1.9",
     "minifyify": "^4.4.0",
     "mocha": "^1.21.4",
+    "protractor": "^1.5.0",
+    "selenium-server-standalone-jar": "^2.44.0",
     "uglifyify": "^2.5.0"
   },
   "dependencies": {
