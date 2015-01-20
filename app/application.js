@@ -4,12 +4,12 @@ window.MyApp = angular.module("MyApp", [
   'myapp.controllers',
   'myapp.services',
   'myapp.directives',
-  'ngAnimate', 
+  'ngAnimate',
   'ngMaterial',
   'ui.router'
    ]);
 
-MyApp.run(['$rootScope','Refs','$timeout','Authentication', 'Authorization', function($rootScope, Refs, $timeout, Authentication, Authorization) {
+MyApp.run(['$rootScope','Refs','$timeout','Authentication', 'Authorization', '$state', function($rootScope, Refs, $timeout, Authentication, Authorization, $state) {
   // set globals we want available in ng expressions
   $rootScope._ = window._;
   $rootScope.moment = window.moment;
@@ -27,9 +27,10 @@ MyApp.run(['$rootScope','Refs','$timeout','Authentication', 'Authorization', fun
         else{
           user = snap.val();
         }
-        console.log(user);
+
         $timeout(function(){
           $rootScope.authUser = user;
+          $state.go('user/settings');
         });
       });
 

@@ -1,6 +1,6 @@
 angular.module('myapp.services')
 .factory('Authentication',['$rootScope','$firebase', 'Refs', '$state', function($rootScope, $firebase, Refs, $state){
-  
+
   return {
     login: function(){
        //analytics.track('Login');

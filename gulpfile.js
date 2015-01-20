@@ -116,7 +116,8 @@ gulp.task('test:one', function() {
   .on('error', function(err) {
     // Make sure failed tests cause gulp to exit non-zero
     throw err;
-  });
+  })
+  .pipe(exit());
 });
 
 gulp.task('test:lib', function() {
@@ -156,9 +157,7 @@ gulp.task('bower', function() {
     .pipe(gulp.dest('public/lib/'));
 });
 
-gulp.task('protractor',function(cb){
-
-  //app.listen(8000);
+gulp.task('e2e',function(cb){
   gulp.src(["./lib/protractor/tests/**/*.js"])
   .pipe(protractor({
       configFile: "test/protractor.conf.js",

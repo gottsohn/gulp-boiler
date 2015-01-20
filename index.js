@@ -1,6 +1,6 @@
 global._ = require('lodash');
 global.t = require('moment');
-var firebaseRef = require('./firebaseRef');
+var firebaseRef = require('./firebase-ref');
 var bodyParser = require('body-parser');
 function run(appdir) {
 	var express = require('express');
@@ -12,7 +12,7 @@ function run(appdir) {
   }));
   app.use(bodyParser.json());
 	// things to do on each request
-	
+
 	app.use(function (req, res, next) {
 		// tell the client what firebase to use
 		if(process.env.NODE_ENV === 'production') {
@@ -22,7 +22,7 @@ function run(appdir) {
 			// development mode
 			res.cookie('rootRef', firebaseRef.dev);
 			// log the request
-		  console.log(t().format('HH:MM'), req.method , req.hostname + ':'+req.port + '\n' + req.url, req.socket.bytesRead);
+		  console.log(t().format('HH:MM'), req.method , '\n' + req.url, req.socket.bytesRead);
 		}
 	  next();
 	});
