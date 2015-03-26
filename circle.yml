@@ -7,7 +7,12 @@ dependencies:
 test:
   override:
 deployment:
-  staging:
+  production:
     branch: master
     heroku:
       appname: matsi
+  staging:
+    branch: develop
+    heroku:
+      appname: tatsi
+  
